@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+
+
+  <main id="main" class="main">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="pagetitle">
+            <h1>Ümumi məlumatlar</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Əsas səhifə</li>
+              </ol>
+            </nav>
+          </div><!-- End Page Title -->
+       </div>
+
+        <div class="col-lg-6">
+          {% include 'includes/messages.html' %}
+        </div>
+      </div>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+                  
+                  <!-- Pie Chart -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bütün sənədlər</h5>
+
+              
+              <div id="pieChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#pieChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      orient: 'vertical',
+                      left: 'left'
+                    },
+                    series: [{
+                      type: 'pie',
+                      radius: '70%',
+                      data: [{
+                          value: 10,
+                          name: 'Prosedurlar'
+                        },
+                        {
+                          value: 15,
+                          name: 'Müqavilələr'
+                        },
+                        {
+                          value: 4,
+                          name: 'Digər'
+                        }
+                      ],
+                      emphasis: {
+                        itemStyle: {
+                          shadowBlur: 10,
+                          shadowOffsetX: 0,
+                          shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                      }
+                    }]
+                  });
+                });
+              </script>
+              <!-- End Pie Chart -->
+            </div>  
+          </div> 
+        </div>
+
+        <div class="col-lg-6">
+      <!-- Revenue Card -->
+          <div class="card info-card revenue-card">
+
+            <div class="card-body">
+              <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}<span> | Tarixçə</span></h5>
+                <div class="ps-3">
+                  <span class="text-muted small pt-2 ps-1">Sizin, sistemdə son aktivlik </span><span class="text-success small pt-1 fw-bold">{{ user.last_login | date:"SHORT_DATE_FORMAT" }}</span><span class="text-muted small pt-2 ps-1">tarixində olub.</span>
+                </div>
+              </div>
+          </div>
+      <!-- End Revenue Card -->
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Son əlavə olunan sənədlər <span>| Tarixçə</span></h5>
+              <div class="activity">
+                {% for last_procedure in last_procedures %}
+                  <div class="activity-item d-flex">
+                    <i class='bi bi-file-earmark-check activity-badge text-success align-self-start'></i>
+                    <div class="activity-content" style="padding-left: 10px">
+                      <h5><a href="{{ last_procedure.procedure_file.url }}" style="font-size: 15px;">{{ last_procedure.procedure_name }}</a></h5>
+                    </div>
+                  </div><!-- End activity item-->
+                {% endfor %}
+              </div>
+            </div>
+          </div><!-- End Recent Activity -->
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+  {% endblock  %}

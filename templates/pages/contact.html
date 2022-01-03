@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Əlaqə</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Əsas səhifə</a></li>
+          <li class="breadcrumb-item active">Əlaqə</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section contact">
+
+      <div class="row gy-4">
+        
+          <div class="col-xl-6">
+              <div class="row">
+                {% for i in team %}
+                  <div class="col-lg-6">
+                    <div class="info-box card">
+                      <i class="ri-customer-service-fill"></i>
+                      <h3>{{ i.support_title }}</h3>
+                      <p>{{ i.first_name }} {{ i.last_name }}<br>Email: {{ i.email }}<br>Mobil: {{ i.phone }}</p>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+          </div>
+          
+
+        <div class="col-xl-6">
+          <div class="card p-4">
+            <form action="{% url 'contact' %}" method="POST" class="php-email-form">
+              {% csrf_token %}
+              
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="first_name" class="form-control" placeholder="Ad, Soyad" value= "{{user.first_name}}" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="text" name="last_name" class="form-control" placeholder="Ad, Soyad" value= "{{ user.last_name }}" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Poçt" value = "{{ user.email }}"required>
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-select" name="subject" style="padding: 10px 15px; font-size: 14px; border-radius: 0px" required>
+                    <option selected disabled>Mövzu</option>
+                    {% for i in subdoc %}
+                    <option>{{i.document_type}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Müraciət" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div>
+                    {% include 'includes/messages.html' %}
+                  </div>
+                  <button type="submit">Göndərin</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
+
+{% endblock %}

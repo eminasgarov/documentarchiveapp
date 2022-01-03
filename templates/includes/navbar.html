@@ -1,0 +1,36 @@
+{% load static %}
+
+ <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a 
+        {% if '/' == request.path %}
+        class="nav-link"
+        {% else %}
+        class="nav-link collapsed"
+        {% endif %}
+        href="{% url 'home' %}">
+          <i class="bi bi-grid"></i>
+          <span>Əsas səhifə</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a 
+        {% if 'procedures' in request.path %}
+        class="nav-link"
+        {% else %}
+        class="nav-link collapsed" 
+        {% endif %}
+        href="{% url 'procedures' %}">
+          <i class="bi bi-file-earmark"></i>
+          <span>Prosedurlar</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
