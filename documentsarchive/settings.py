@@ -67,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'category.context_processors.doc_filter_link',
+                'category.context_processors.dep_filter_link',
             ],
         },
     },
@@ -148,3 +150,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'asgarov.emin@gmail.com'
 EMAIL_HOST_PASSWORD = 'Emishok77'
 EMAIL_USE_TLS = True
+
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

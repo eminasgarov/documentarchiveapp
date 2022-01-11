@@ -11,15 +11,16 @@
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
       </div><!-- End Logo -->
-  
+      {% if 'search' in request.path %}
+      {% else %}
       <div class="search-bar">
-        <form class="search-form d-flex align-items-center" method="GET" action="{% url 'procedure_search' %}">
-          <input type="text" name="keyword" placeholder="Axtarış" title="Enter search keyword">
-          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        <form class="search-form d-flex align-items-center" method="GET" action="{% url 'search' %}">
+          <input type="text" name="keyword" placeholder="Açar sözü ilə axtarış" title="Açar sözü daxil edin">
+          <button type="submit" title="Axtar"><i class="bi bi-search"></i></button>
         </form>
       </div><!-- End Search Bar -->
+      {% endif %}
     
-  
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
   
@@ -28,16 +29,7 @@
               <i class="bi bi-search"></i>
             </a>
           </li><!-- End Search Icon-->
-
-          <nav class="header-nav ms-auto">
-            <ul class="d-flex align-items-center">
       
-              <li class="nav-item d-block d-lg-none">
-                <a class="nav-link nav-icon search-bar-toggle " href="#">
-                  <i class="bi bi-search"></i>
-                </a>
-              </li><!-- End Search Icon-->
-           
   
   
           <li class="nav-item dropdown pe-3">

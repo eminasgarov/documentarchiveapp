@@ -1,12 +1,12 @@
 from django.contrib import admin
-from documents.models import Procedure
-
+from documents.models import KISDocument
 # Register your models here.
-class ProcedureAdmin(admin.ModelAdmin):
-    list_display = ('document_type', 'procedure_id', 'procedure_name', 'department', 'procedure_date', 'is_featured', 'created_date', 'modified_date')
-    list_display_links = ('procedure_id', 'procedure_name')
+class KISDocumentAdmin(admin.ModelAdmin):
+    list_display = ('document_type', 'kis_document_id', 'kis_document_name', 'department', 'kis_document_date', 'is_featured', 'created_date', 'modified_date')
+    list_display_links = ('kis_document_id', 'kis_document_name')
     list_editable = ('is_featured',)
-    search_fields = ('procedure_name', 'department')
-    list_filter = ('department',)
+    search_fields = ('kis_document_name', 'department')
+    list_filter = ('department', 'document_type')
 
-admin.site.register(Procedure, ProcedureAdmin)
+admin.site.register(KISDocument, KISDocumentAdmin)
+

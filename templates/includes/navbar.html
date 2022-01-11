@@ -20,16 +20,35 @@
 
       <li class="nav-item">
         <a 
-        {% if 'procedures' in request.path %}
+        {% if 'search' in request.path %}
         class="nav-link"
         {% else %}
-        class="nav-link collapsed" 
+        class="nav-link collapsed"
         {% endif %}
-        href="{% url 'procedures' %}">
-          <i class="bi bi-file-earmark"></i>
-          <span>Prosedurlar</span>
+        href="{% url 'search' %}">
+          <i class="bi bi-search"></i>
+          <span>Ətraflı axtarış</span>
         </a>
-      </li><!-- End Blank Page Nav -->
+      </li><!-- End Dashboard Nav -->
+
+
+      <span style="font-weight: 700;">KİS sənədləri</span>
+      
+      {% for document in documents %}
+        <li class="nav-item">
+          <a
+          {% if request.path == document.get_url %}
+            class="nav-link"
+          {% else %}
+            class="nav-link collapsed"
+          {% endif %}
+          href="{{ document.get_url }}">
+            <i class="bi bi-file-earmark"></i>
+            <span>{{ document.document_type }}</span>
+          </a>
+        </li><!-- End Blank Page Nav -->
+      {% endfor %}
+
 
     </ul>
 

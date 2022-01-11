@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.procedures, name='procedures'),
-    path('procedures', views.procedures, name='procedures'),
-    path('procedure_search', views.procedure_search, name='procedure_search'),
+    path('', views.kis_documents, name='kis_documents'),
+    path('kis_documents/<slug:document_type_slug>/', views.kis_documents, name='documents_by_type'),
+    path('search/', views.search, name='search')
+
 ]

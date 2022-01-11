@@ -1,19 +1,22 @@
 {% if messages %}
 
   {% for message in messages %}
-      <div id="message" class="container">
-        <div class="alert alert-{{ message.tags }}" alert-dismissable role="alert" style='font-size: 14px'>
-
+        <div id="message" class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert" style='font-size: 14px;'>
+          <i
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          class="bi bi-exclamation-octagon me-1"
+          {% else %}
+          class="bi bi-check-circle me-1"
+          {% endif %}></i>
             <strong>
               {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                   Xəta:
               {% else %}
-                  {{mesaage.tags|title}}
+                  {{title}}
               {% endif %}
             </strong>
             {{message}}
         </div>
-      </div>
   {% endfor %}
 
 {% endif %}

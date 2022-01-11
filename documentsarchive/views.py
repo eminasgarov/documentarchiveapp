@@ -1,17 +1,18 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from documents.models import Procedure
+from documents.models import KISDocument
 
 
 @login_required(login_url = 'login')
 def home(request):
-    procedures              = Procedure.objects.order_by('-created_date')
-    procedures_count        = procedures.count()
-    last_procedures         = Procedure.objects.order_by('-created_date')[:7]
+    kis_documents                  = KISDocument.objects.order_by('-created_date')
+    last_kis_documents             = KISDocument.objects.order_by('-created_date')[:7]
+    featured_kis_documents          = KISDocument.objects.order_by('-created_date').filter(is_featured=True)
+
     
     data = {
-        "procedures": procedures,
-        "procedures_count": procedures_count,
-        "last_procedures": last_procedures,
+        'kis_documents':                    kis_documents,          
+        'last_kis_documents':               last_kis_documents,
+        'featured_kis_documents':             featured_kis_documents,
     }
     return render(request, 'home.html', data)

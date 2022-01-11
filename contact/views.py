@@ -46,6 +46,6 @@ def contact(request):
 
         email_contact.save()
     
-        messages.success(request, 'Your request has been submitted')
+        messages.success(request, 'Sizin sorğunuz uğurla göndərilmişdir')
 
     return render(request, 'pages/contact.html', data)
