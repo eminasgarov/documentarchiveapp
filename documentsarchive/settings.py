@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
+import dj_database_url
 from pathlib import Path
 
 
@@ -78,14 +79,18 @@ WSGI_APPLICATION = 'documentsarchive.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'documentsarchive_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Emishok77',
+#         'HOST': 'localhost',
+#     }
+# }
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:Emishok77@localhost/documentsarchive_db')}
 
 
 # Password validation
