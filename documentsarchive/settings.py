@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=y!xisxih32nrq5vqu7ati6(vqlgj=+d-ascsd!y$-+=9z7eu!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'gilanseramik.herokuapp.com']
 
 
 # Application definition
@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'documentsarchive.urls'
@@ -158,3 +159,6 @@ EMAIL_USE_TLS = True
 
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+#Whitenoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
