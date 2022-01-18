@@ -1,2 +1,2009 @@
 [
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$320000$wiC4DFhSapcUqQmv6jArrF$lOQB7JSABstQGOyi7bE1Kw+ulvCkTZchv+Wr1Sqi5G8=",
+        "last_login": "2022-01-18T08:45:17Z",
+        "is_superuser": true,
+        "username": "eminasgarov",
+        "first_name": "Emin",
+        "last_name": "Asgarov",
+        "email": "asgarov.emin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-01-18T08:13:48Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hmvjmrqqrlbpxhn6na2q26eihnkwre1g",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAUBO_iGlmOP7FMSc8ZrI3fMw4gR4qTKuLuJFIKaHdmdhMR61Li2niOI4mr6MTldxuQXlwPQE_UxyTTVJd5HOShyJM2eZ-I37fT_TsoaGWvs8rU-WCgvWKjncqWQ7AIjvvs0TMNnQVZ532ghB46J5NA8LvDCOLzBe4cOMw:1n9k7B:YrbdfH1jGRycz6YH5mdLpAdLOFUI17JUyrlbSM729m4",
+        "expire_date": "2022-02-01T08:45:17.035Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 1,
+    "fields": {
+        "kis_document_id": "GS-GEN-P-001",
+        "kis_document_name": "Keyfiyyət Siyasəti",
+        "document_type": 2,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS.pdf",
+        "kis_document_date": "15/12/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:08:52.642Z",
+        "modified_date": "2022-01-18T09:24:29.439Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 2,
+    "fields": {
+        "kis_document_id": "GS-GEN-P-002",
+        "kis_document_name": "İş sağlamlığı və əməyin təhlükəsizliyi Siyasəti",
+        "document_type": 2,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_jk8ChOd.pdf",
+        "kis_document_date": "14/12/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:09:30.009Z",
+        "modified_date": "2022-01-18T09:24:04.183Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 3,
+    "fields": {
+        "kis_document_id": "GS-GEN-P-003",
+        "kis_document_name": "Ətraf mühitin mühafizəsi Siyasəti",
+        "document_type": 2,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_P8PBcww.pdf",
+        "kis_document_date": "13/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:10:00.323Z",
+        "modified_date": "2022-01-18T09:10:00.323Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 4,
+    "fields": {
+        "kis_document_id": "GS-GEN-P-004",
+        "kis_document_name": "Asılılıq yaradan maddələrlə bağlı Siyasət",
+        "document_type": 2,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_2VCHfNy.pdf",
+        "kis_document_date": "12/12/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:10:25.382Z",
+        "modified_date": "2022-01-18T09:23:21.072Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 5,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-001",
+        "kis_document_name": "Maliyyə departamentinin əsasnaməsi",
+        "document_type": 5,
+        "department": 1,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_alB4HOv.pdf",
+        "kis_document_date": "11/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:11:02.465Z",
+        "modified_date": "2022-01-18T09:11:02.465Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 6,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-002",
+        "kis_document_name": "Kommersiya departamentinin əsasnaməsi",
+        "document_type": 5,
+        "department": 1,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_njp67HX.pdf",
+        "kis_document_date": "10/12/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:11:32.162Z",
+        "modified_date": "2022-01-18T09:24:29.437Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 7,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-003",
+        "kis_document_name": "İnsan Resursları departamentinin əsasnaməsi",
+        "document_type": 5,
+        "department": 3,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_AyReesN.pdf",
+        "kis_document_date": "09/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:12:03.970Z",
+        "modified_date": "2022-01-18T09:12:03.970Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 8,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-004",
+        "kis_document_name": "TLD Yerli təchizat şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 4,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_W2Su8Yu.pdf",
+        "kis_document_date": "16/12/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:12:37.696Z",
+        "modified_date": "2022-01-18T09:24:29.436Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 9,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-005",
+        "kis_document_name": "TLD Xarici təchizat və logistika şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 4,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_Ky1W6IC.pdf",
+        "kis_document_date": "17/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:13:03.182Z",
+        "modified_date": "2022-01-18T09:13:03.182Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 10,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-006",
+        "kis_document_name": "Hüquq şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 14,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_dckRqEe.pdf",
+        "kis_document_date": "17/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:13:39.644Z",
+        "modified_date": "2022-01-18T09:13:39.644Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 11,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-007",
+        "kis_document_name": "SƏTƏMM şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 10,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_9c9eUbn.pdf",
+        "kis_document_date": "05/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:14:22.316Z",
+        "modified_date": "2022-01-18T09:14:22.316Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 12,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-008",
+        "kis_document_name": "KİS şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_giEt8XM.pdf",
+        "kis_document_date": "04/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:14:50.892Z",
+        "modified_date": "2022-01-18T09:14:50.892Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 13,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-009",
+        "kis_document_name": "Nəzarət şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 12,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_zBFZDFY.pdf",
+        "kis_document_date": "03/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:15:24.391Z",
+        "modified_date": "2022-01-18T09:15:24.391Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 14,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-010",
+        "kis_document_name": "Nəqliyyat şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 16,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_H1wboDi.pdf",
+        "kis_document_date": "01/12/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:16:38.419Z",
+        "modified_date": "2022-01-18T09:16:38.419Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 15,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-011",
+        "kis_document_name": "İnformasiya texnologiyaları şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 13,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_xy2hNdj.pdf",
+        "kis_document_date": "15/11/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:17:06.934Z",
+        "modified_date": "2022-01-18T09:24:29.434Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 16,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-012",
+        "kis_document_name": "Ümumi işlər departamenti Təsərrüfat şöbəsinin əsasnaməsi",
+        "document_type": 5,
+        "department": 5,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_WQAFdJY.pdf",
+        "kis_document_date": "15/12/2020",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:17:41.116Z",
+        "modified_date": "2022-01-18T09:24:29.432Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 17,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-013",
+        "kis_document_name": "Ümumi işlər departamenti Qonaq evinin əsasnaməsi",
+        "document_type": 5,
+        "department": 5,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_o5z68xW.pdf",
+        "kis_document_date": "15/10/2021",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:18:17.738Z",
+        "modified_date": "2022-01-18T09:18:17.738Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 18,
+    "fields": {
+        "kis_document_id": "GS-GEN-REG-014",
+        "kis_document_name": "Ümumi işlər departamenti Yeməkxananın əsasnaməsi",
+        "document_type": 5,
+        "department": 19,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_N0DVDyq.pdf",
+        "kis_document_date": "15/09/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:18:59.043Z",
+        "modified_date": "2022-01-18T09:24:04.181Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 19,
+    "fields": {
+        "kis_document_id": "GS-QMS-PR-001",
+        "kis_document_name": "Sənədləşdirilmiş məlumatların idarə olunması Proseduru",
+        "document_type": 6,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_B4yPAHo.pdf",
+        "kis_document_date": "15/02/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:20:13.739Z",
+        "modified_date": "2022-01-18T09:24:29.421Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 20,
+    "fields": {
+        "kis_document_id": "GS-QMS-PR-005",
+        "kis_document_name": "Risk və Fürsətlərin idarə olunması Proseduru",
+        "document_type": 6,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_xUyxWmO.pdf",
+        "kis_document_date": "15/12/2020",
+        "is_featured": false,
+        "created_date": "2022-01-18T09:20:53.617Z",
+        "modified_date": "2022-01-18T09:20:53.617Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 21,
+    "fields": {
+        "kis_document_id": "GS-QMS-PR-008",
+        "kis_document_name": "Kommunikasiya Proseduru",
+        "document_type": 6,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_T6rS9oX.pdf",
+        "kis_document_date": "15/11/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:21:27.383Z",
+        "modified_date": "2022-01-18T09:24:04.176Z"
+    }
+},
+{
+    "model": "documents.kisdocument",
+    "pk": 22,
+    "fields": {
+        "kis_document_id": "GS-QMS-PR-010",
+        "kis_document_name": "GS-QMS-PR-010",
+        "document_type": 6,
+        "department": 11,
+        "kis_document_file": "kis_documents/2022/01/18/COMMANDS_HRTU5zy.pdf",
+        "kis_document_date": "05/03/2021",
+        "is_featured": true,
+        "created_date": "2022-01-18T09:22:13.412Z",
+        "modified_date": "2022-01-18T09:23:14.497Z"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 1,
+    "fields": {
+        "document_type": "Ümumi",
+        "slug": "umumi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 2,
+    "fields": {
+        "document_type": "Siyasət",
+        "slug": "siyaset"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 3,
+    "fields": {
+        "document_type": "Məqsəd",
+        "slug": "meqsed"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 4,
+    "fields": {
+        "document_type": "Keyfiyyət əl kitabı",
+        "slug": "keyfiyyet-el-kitabi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 5,
+    "fields": {
+        "document_type": "Əsasnamə",
+        "slug": "esasname"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 6,
+    "fields": {
+        "document_type": "Prosedur",
+        "slug": "prosedur"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 7,
+    "fields": {
+        "document_type": "Təlimat",
+        "slug": "telimat"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 8,
+    "fields": {
+        "document_type": "Təşkilat Strukturu",
+        "slug": "teskilat-strukturu"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 9,
+    "fields": {
+        "document_type": "Vəzifə Təlimatı",
+        "slug": "vezife-telimati"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 10,
+    "fields": {
+        "document_type": "İş axış sxemi",
+        "slug": "is-axis-sxemi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 11,
+    "fields": {
+        "document_type": "Forma",
+        "slug": "forma"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 12,
+    "fields": {
+        "document_type": "Şablon",
+        "slug": "sablon"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 13,
+    "fields": {
+        "document_type": "Hazır məhsul Spesifikasiyası",
+        "slug": "hazir-mehsul-spesifikasiyasi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 14,
+    "fields": {
+        "document_type": "Xammalın Spesifikasiyası",
+        "slug": "xammalin-spesifikasiyasi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 15,
+    "fields": {
+        "document_type": "Resept",
+        "slug": "resept"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 16,
+    "fields": {
+        "document_type": "Dəyişikliklərin İdarə Olunması",
+        "slug": "deyisikliklerin-idare-olunmasi"
+    }
+},
+{
+    "model": "category.document",
+    "pk": 17,
+    "fields": {
+        "document_type": "Risk Qiymətləndirmə",
+        "slug": "risk-qiymetlendirme"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 1,
+    "fields": {
+        "department": "Maliyyə Departamenti",
+        "slug": "maliyye-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 2,
+    "fields": {
+        "department": "Kommersiya Departamenti",
+        "slug": "kommersiya-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 3,
+    "fields": {
+        "department": "İnsan Resursları Departamenti",
+        "slug": "insan-resurslari-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 4,
+    "fields": {
+        "department": "Təchizat və Logistika Departamenti",
+        "slug": "techizat-ve-logistika-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 5,
+    "fields": {
+        "department": "Ümumi İşlər Departamenti",
+        "slug": "umumi-isler-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 6,
+    "fields": {
+        "department": "Əməliyyat Departamenti",
+        "slug": "emeliyyat-departamenti"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 7,
+    "fields": {
+        "department": "İstehsalat",
+        "slug": "istehsalat"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 8,
+    "fields": {
+        "department": "Anbar Şöbəsi",
+        "slug": "anbar-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 9,
+    "fields": {
+        "department": "Texniki Xidmət Şöbəsi",
+        "slug": "texniki-xidmet-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 10,
+    "fields": {
+        "department": "SƏTƏMM Şöbəsi",
+        "slug": "setemm-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 11,
+    "fields": {
+        "department": "Keyfiyyət İdarəetmə Sistemləri Şöbəsi",
+        "slug": "keyfiyyet-idareetme-sistemleri-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 12,
+    "fields": {
+        "department": "Nəzarət Şöbəsi",
+        "slug": "nezaret-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 13,
+    "fields": {
+        "department": "İnformasiya Texnologiyaları Şöbəsi",
+        "slug": "informasiya-texnologiyalari-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 14,
+    "fields": {
+        "department": "Hüquq Şöbəsi",
+        "slug": "huquq-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 15,
+    "fields": {
+        "department": "Təsərrüfat Şöbəsi",
+        "slug": "teserrufat-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 16,
+    "fields": {
+        "department": "Nəqliyyat Şöbəsi",
+        "slug": "neqliyyat-sobesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 17,
+    "fields": {
+        "department": "Admistrativ Şöbə",
+        "slug": "admistrativ-sobe"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 18,
+    "fields": {
+        "department": "Yeməkxana",
+        "slug": "yemekxana"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 19,
+    "fields": {
+        "department": "Qonaq evi",
+        "slug": "qonaq-evi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 20,
+    "fields": {
+        "department": "Texnoloji Şöbə",
+        "slug": "texnoloji-sobe"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 21,
+    "fields": {
+        "department": "Prosesə nəzarət bölməsi",
+        "slug": "prosese-nezaret-bolmesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 22,
+    "fields": {
+        "department": "Keyfiyyətə nəzarət bölməsi",
+        "slug": "keyfiyyete-nezaret-bolmesi"
+    }
+},
+{
+    "model": "category.department",
+    "pk": 23,
+    "fields": {
+        "department": "Planlama",
+        "slug": "planlama"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2022-01-18T08:45:55.006Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "eminasgarov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2022-01-18T08:47:15.847Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "1",
+        "object_repr": "Maliyyə Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2022-01-18T08:47:24.471Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "2",
+        "object_repr": "Kommersiya Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2022-01-18T08:47:33.491Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "3",
+        "object_repr": "İnsan Resursları Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2022-01-18T08:47:40.353Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "4",
+        "object_repr": "Təchizat və Logistika Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2022-01-18T08:47:52.095Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "5",
+        "object_repr": "Ümumi İşlər Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2022-01-18T08:47:59.282Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "6",
+        "object_repr": "Əməliyyat Departamenti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2022-01-18T08:48:09.327Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "7",
+        "object_repr": "İstehsalat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2022-01-18T08:48:16.250Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "8",
+        "object_repr": "Anbar Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2022-01-18T08:48:27.719Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "9",
+        "object_repr": "Texniki Xidmət Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2022-01-18T08:48:37.314Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "10",
+        "object_repr": "SƏTƏMM Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2022-01-18T08:48:45.943Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "11",
+        "object_repr": "Keyfiyyət İdarəetmə Sistemləri Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2022-01-18T08:48:53.931Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "12",
+        "object_repr": "Nəzarət Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2022-01-18T08:49:02.240Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "13",
+        "object_repr": "İnformasiya Texnologiyaları Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2022-01-18T08:49:10.112Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "14",
+        "object_repr": "Hüquq Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2022-01-18T08:49:20.038Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "15",
+        "object_repr": "Təsərrüfat Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2022-01-18T08:49:27.942Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "16",
+        "object_repr": "Nəqliyyat Şöbəsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2022-01-18T08:49:39.033Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "17",
+        "object_repr": "Admistrativ Şöbə",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2022-01-18T08:49:48.179Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "18",
+        "object_repr": "Yeməkxana",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2022-01-18T08:49:54.852Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "19",
+        "object_repr": "Qonaq evi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2022-01-18T08:50:01.870Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "20",
+        "object_repr": "Texnoloji Şöbə",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2022-01-18T08:50:08.796Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "21",
+        "object_repr": "Prosesə nəzarət bölməsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2022-01-18T08:50:15.418Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "22",
+        "object_repr": "Keyfiyyətə nəzarət bölməsi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2022-01-18T08:50:22.215Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "department"
+        ],
+        "object_id": "23",
+        "object_repr": "Planlama",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2022-01-18T08:50:45.891Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "1",
+        "object_repr": "Ümumi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2022-01-18T08:50:52.046Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "2",
+        "object_repr": "Siyasət",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2022-01-18T08:50:58.030Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "3",
+        "object_repr": "Məqsəd",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2022-01-18T08:51:03.998Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "4",
+        "object_repr": "Keyfiyyət əl kitabı",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2022-01-18T08:51:10.262Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "5",
+        "object_repr": "Əsasnamə",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2022-01-18T08:51:16.401Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "6",
+        "object_repr": "Prosedur",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2022-01-18T08:51:22.571Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "7",
+        "object_repr": "Təlimat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2022-01-18T08:51:29.607Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "8",
+        "object_repr": "Təşkilat Strukturu",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2022-01-18T08:51:36.755Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "9",
+        "object_repr": "Vəzifə Təlimatı",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2022-01-18T08:51:44.018Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "10",
+        "object_repr": "İş axış sxemi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2022-01-18T08:51:53.324Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "11",
+        "object_repr": "Forma",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2022-01-18T08:51:59.974Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "12",
+        "object_repr": "Şablon",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2022-01-18T08:52:06.739Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "13",
+        "object_repr": "Hazır məhsul Spesifikasiyası",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2022-01-18T08:52:16.355Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "14",
+        "object_repr": "Xammalın Spesifikasiyası",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2022-01-18T08:52:24.535Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "15",
+        "object_repr": "Resept",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2022-01-18T08:52:37.176Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "16",
+        "object_repr": "Dəyişikliklərin İdarə Olunması",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2022-01-18T08:53:04.920Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "category",
+            "document"
+        ],
+        "object_id": "17",
+        "object_repr": "Risk Qiymətləndirmə",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2022-01-18T09:08:52.644Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "1",
+        "object_repr": "GS-GEN-P-001",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2022-01-18T09:09:30.010Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "2",
+        "object_repr": "GS-GEN-P-002",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2022-01-18T09:10:00.324Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "3",
+        "object_repr": "GS-GEN-P-003",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2022-01-18T09:10:25.383Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "4",
+        "object_repr": "GS-GEN-P-004",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2022-01-18T09:11:02.466Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "5",
+        "object_repr": "GS-GEN-REG-001",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2022-01-18T09:11:32.163Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "6",
+        "object_repr": "GS-GEN-REG-002",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2022-01-18T09:12:03.972Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "7",
+        "object_repr": "GS-GEN-REG-003",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2022-01-18T09:12:37.697Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "8",
+        "object_repr": "GS-GEN-REG-004",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2022-01-18T09:13:03.183Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "9",
+        "object_repr": "GS-GEN-REG-005",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2022-01-18T09:13:39.645Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "10",
+        "object_repr": "GS-GEN-REG-006",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2022-01-18T09:14:22.317Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "11",
+        "object_repr": "GS-GEN-REG-007",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2022-01-18T09:14:50.894Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "12",
+        "object_repr": "GS-GEN-REG-008",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2022-01-18T09:15:24.392Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "13",
+        "object_repr": "GS-GEN-REG-009",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2022-01-18T09:16:38.420Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "14",
+        "object_repr": "GS-GEN-REG-010",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2022-01-18T09:17:06.935Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "15",
+        "object_repr": "GS-GEN-REG-011",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2022-01-18T09:17:41.119Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "16",
+        "object_repr": "GS-GEN-REG-012",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2022-01-18T09:18:17.740Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "17",
+        "object_repr": "GS-GEN-REG-013",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2022-01-18T09:18:59.045Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "18",
+        "object_repr": "GS-GEN-REG-014",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2022-01-18T09:20:13.740Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "19",
+        "object_repr": "GS-QMS-PR-001",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2022-01-18T09:20:53.618Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "20",
+        "object_repr": "GS-QMS-PR-005",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2022-01-18T09:21:27.384Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "21",
+        "object_repr": "GS-QMS-PR-008",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2022-01-18T09:22:13.414Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "22",
+        "object_repr": "GS-QMS-PR-010",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2022-01-18T09:23:14.498Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "22",
+        "object_repr": "GS-QMS-PR-010",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2022-01-18T09:23:21.072Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "4",
+        "object_repr": "GS-GEN-P-004",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2022-01-18T09:24:04.178Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "21",
+        "object_repr": "GS-QMS-PR-008",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2022-01-18T09:24:04.182Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "18",
+        "object_repr": "GS-GEN-REG-014",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2022-01-18T09:24:04.184Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "2",
+        "object_repr": "GS-GEN-P-002",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.428Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "19",
+        "object_repr": "GS-QMS-PR-001",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.433Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "16",
+        "object_repr": "GS-GEN-REG-012",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.435Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "15",
+        "object_repr": "GS-GEN-REG-011",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.437Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "8",
+        "object_repr": "GS-GEN-REG-004",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.438Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "6",
+        "object_repr": "GS-GEN-REG-002",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2022-01-18T09:24:29.440Z",
+        "user": [
+            "eminasgarov"
+        ],
+        "content_type": [
+            "documents",
+            "kisdocument"
+        ],
+        "object_id": "1",
+        "object_repr": "GS-GEN-P-001",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is featured\"]}}]"
+    }
+}
 ]
