@@ -6,10 +6,11 @@ from category.models import Department
 # Create your models here.
 
 class UserProfile(models.Model):
-    user        = models.OneToOneField(User, on_delete=models.CASCADE)
-    company     = models.CharField(max_length=100, blank=True)
-    department  = models.ForeignKey(Department, on_delete=models.CASCADE)
-    position    = models.CharField(max_length=100, blank=True)
+    user          = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_photo = models.ImageField(upload_to='userprofile', blank=True)
+    company       = models.CharField(max_length=100, blank=True)
+    department    = models.ForeignKey(Department, on_delete=models.CASCADE)
+    position      = models.CharField(max_length=100, blank=True)
     
     def __str__(self):
         return self.user.username

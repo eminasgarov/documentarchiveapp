@@ -35,10 +35,10 @@
             <div class="card-body">
               <h5 class="card-title">Tez-tez istifadə olunan sənədlər</span></h5>
               <div class="activity">
-                {% for i in featured_kis_documents %}
+                {% for i in featured_documents %}
                   <div class="activity-item d-flex">
                     <div class="activity-content" style="padding-left: 10px">
-                      <h5 style="font-size: 15px;"><span>{{ i.document_type}} | </span><a href="{{ i.kis_document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ i.kis_document_name }}</a></h5>
+                      <h5 style="font-size: 15px;"><span>{{ i.document_type}} | </span><a href="{{ i.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ i.document_name }}</a></h5>
                     </div>
                   </div><!-- End activity item-->
                 {% endfor %}
@@ -66,10 +66,10 @@
             <div class="card-body">
               <h5 class="card-title">Son əlavə olunan sənədlər <span>| Tarixçə</span></h5>
               <div class="activity">
-                {% for last_kis_document in last_kis_documents %}
+                {% for last_document in last_documents %}
                   <div class="activity-item d-flex">
                     <div class="activity-content" style="padding-left: 10px">
-                      <h5 style="font-size: 15px;"><span>{{ last_kis_document.created_date | date:"SHORT_DATE_FORMAT" }} | {{ last_kis_document.document_type}} | </span><a href="{{ last_kis_document.kis_document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ last_kis_document.kis_document_name }}</a></h5>
+                      <h5 style="font-size: 15px;"><span>{{ last_document.created_date | date:"SHORT_DATE_FORMAT" }} | {{ last_document.document_type}} | </span><a href="{{ last_document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ last_document.document_name }}</a></h5>
                     </div>
                   </div><!-- End activity item-->
                 {% endfor %}

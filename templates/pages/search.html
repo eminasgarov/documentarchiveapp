@@ -23,8 +23,8 @@
     
       <div class="col-lg-6">
         <p class="text-muted small" style="text-align: right;">Sənəd sayı: <span style="font-weight: 700;">
-          {% if kis_documents %}
-          {{ kis_documents_count }}
+          {% if documents %}
+          {{ documents_count }}
           {% else %}
           0
           {% endif %}
@@ -74,7 +74,7 @@
     <section class="section">
       <div class="row">
 
-        {% if kis_documents %}
+        {% if documents %}
         <div class="card">
         <!-- Table with hoverable rows -->
               <table class="table table-hover">
@@ -90,13 +90,13 @@
                 </thead>
                 
                 <tbody>
-                    {% for document in kis_documents %}
+                    {% for document in documents %}
                       <tr>
                         <td>{{ document.document_type }}</td>
-                        <td>{{ document.kis_document_id }}</td>
-                        <td><a href="{{ document.kis_document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ document.kis_document_name }}</a></td>
+                        <td>{{ document.document_id }}</td>
+                        <td><a href="{{ document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ document.document_name }}</a></td>
                         <td>{{ document.department }}</td>
-                        <td>{{ document.kis_document_date }}</td>
+                        <td>{{ document.document_date }}</td>
                       </tr>
                     {% endfor %}
                 </tbody>
@@ -112,11 +112,11 @@
 
     <!-- Pagination with icons -->
               <nav aria-label="Page navigation example">
-                {% if kis_documents.has_other_pages %}
+                {% if documents.has_other_pages %}
                   <ul class="pagination justify-content-center">
-                    {% if kis_documents.has_previous %}
+                    {% if documents.has_previous %}
                       <li class="page-item">
-                        <a class="page-link" href="?page={{ kis_documents.previous_page_number}}" aria-label="Previous">
+                        <a class="page-link" href="?page={{ documents.previous_page_number}}" aria-label="Previous">
                           <span aria-hidden="true">&laquo;</span>
                         </a>
                       </li>
@@ -128,17 +128,17 @@
                       </li>
                     {% endif %}
 
-                    {% for i in kis_documents.paginator.page_range %}
-                      {% if kis_documents.number == i %}
+                    {% for i in documents.paginator.page_range %}
+                      {% if documents.number == i %}
                         <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
                       {% else %}
                         <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
                       {% endif %}
                     {% endfor %}
                     
-                    {% if kis_documents.has_next %}
+                    {% if documents.has_next %}
                       <li class="page-item">
-                        <a class="page-link" href="?page={{ kis_documents.next_page_number}}" aria-label="Next">
+                        <a class="page-link" href="?page={{ documents.next_page_number}}" aria-label="Next">
                           <span aria-hidden="true">&raquo;</span>
                         </a>
                       </li>

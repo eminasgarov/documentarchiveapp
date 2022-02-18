@@ -7,7 +7,7 @@ from django.utils.html import format_html
 
 class UserProfileAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
-        return format_html('<img src="{}" width="40" style="border-radius: 20px" />'.format(object.images.url))
+        return format_html('<img src="{}" width="40" style="border-radius: 20px" />'.format(object.profile_photo.url))
     
     list_display        = ('thumbnail', 'user', 'company', 'department', 'position')
     list_display_links  = ('user',)
