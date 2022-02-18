@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
-import dj_database_url
 from pathlib import Path
 
 
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-=y!xisxih32nrq5vqu7ati6(vqlgj=+d-ascsd!y$-+=9z7eu!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'gilanseramik.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -53,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'documentsarchive.urls'
@@ -80,18 +78,14 @@ WSGI_APPLICATION = 'documentsarchive.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'documentsarchive_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Emishok77',
-#         'HOST': 'localhost',
-#     }
-# }
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:Emishok77@localhost/documentsarchive_db')}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -159,6 +153,3 @@ EMAIL_USE_TLS = True
 
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-#Whitenoise settings
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

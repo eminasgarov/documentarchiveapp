@@ -48,7 +48,7 @@
                     {% for document in kis_documents %}
                       <tr>
                         <td scope="row">{{ document.kis_document_id }}</td>
-                        <td><a href="{{ document.kis_document_file.url }}">{{ document.kis_document_name }}</a></td>
+                        <td><a href="{{ document.kis_document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ document.kis_document_name }}</a></td>
                         <td>{{ document.department }}</td>
                         <td>{{ document.kis_document_date }}</td>
                       </tr>
