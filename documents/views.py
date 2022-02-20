@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from category.models import Department, Document
+from category.models import Department, DocumentVariation
 from documents.models import Document
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -8,11 +8,11 @@ from django.db.models import Q
 
 @login_required(login_url = 'login')
 def documents(request, document_type_slug=None):
-    document_types              = None
+    document_types          = None
     documents               = None
     
     if document_type_slug != None:
-        document_types          = get_object_or_404(Document, slug=document_type_slug)
+        document_types          = get_object_or_404(DocumentVariation, slug=document_type_slug)
         documents               = Document.objects.filter(document_type=document_types).order_by('-created_date')
         paginator               = Paginator(documents, 10)
         page                    = request.GET.get('page')
@@ -35,9 +35,9 @@ def documents(request, document_type_slug=None):
 
 @login_required(login_url = 'login')
 def search(request):
-    documents           = Document.objects.order_by('-created_date')
+    documents               = Document.objects.order_by('-created_date')
     department_search       = Department.objects.values_list('department', flat=True).distinct()
-    document_type_search    = Document.objects.values_list('document_type', flat=True).distinct()
+    document_type_search    = DocumentVariation.objects.values_list('document_type', flat=True).distinct()
     
     
     if 'keyword' in request.GET:
@@ -58,16 +58,16 @@ def search(request):
             documents           = documents.filter(document_type__document_type__iexact=document_type)
             documents_count     = documents.count()
             
-    paginator               = Paginator(documents, 10)
-    page                    = request.GET.get('page')
+    paginator           = Paginator(documents, 10)
+    page                = request.GET.get('page')
     paged_documents     = paginator.get_page(page)
     documents_count     = documents.count()
             
     data = {
         'document_type_search':    document_type_search,
         'department_search':       department_search,
-        'documents':           paged_documents,
-        'documents_count':     documents_count,
+        'documents':               paged_documents,
+        'documents_count':         documents_count,
 
     }
     return render(request, 'pages/search.html', data)

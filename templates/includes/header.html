@@ -35,7 +35,11 @@
           <li class="nav-item dropdown pe-3">
   
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <i class="ri-user-shared-line"></i>
+              {% if user.userprofile.profile_photo %}
+                <img src="{{ user.userprofile.profile_photo.url }}" alt="Profile" class="rounded-circle">
+              {% else %}
+                <img src="\media\userprofile\user.png" alt="Profile" class="rounded-circle">
+              {% endif %}
               <span class="d-none d-md-block dropdown-toggle ps-2">{{user.first_name}} {{user.last_name}}</span>
             </a><!-- End Profile Iamge Icon -->
   
@@ -44,7 +48,13 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-  
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'profile' %}">
+                  <i class="ri-user-shared-line"></i>
+                  <span>Profilim</span>
+                </a>
+              </li>
               <li>
                 <a class="dropdown-item d-flex align-items-center" href="{% url 'contact' %}">
                   <i class="bi bi-question-circle"></i>

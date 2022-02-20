@@ -14,7 +14,7 @@ class DocumentSection(models.Model):
         return self.document_section
     
 
-class Document(models.Model):
+class DocumentVariation(models.Model):
     document_type = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     

@@ -15,9 +15,10 @@
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home' %}">Əsas səhifə</a></li>
- 
-            <li class="breadcrumb-item active">KIS sənədləri</li>
-
+            {% for document in documents %}
+            <li class="breadcrumb-item active">{{ document.document_section }}</li>
+            <li class="breadcrumb-item active">{{ document.document_type }}</li>
+            {% endfor %}
           </ol>
         </nav>
       </div>
@@ -31,33 +32,33 @@
       <div class="row">
 
         {% if documents %}
-        <div class="card">
-        <!-- Table with hoverable rows -->
-              <table class="table table-hover">
-               
-                <thead>
-                  <tr>
-                    <th scope="col">Sənəd #</th>
-                    <th scope="col">Sənədin Adı</th>
-                    <th scope="col">Struktur bölməsi</th>
-                    <th scope="col">Təsdiq tarixi</th>
-                  </tr>
-                </thead>
+          <div class="card">
+          <!-- Table with hoverable rows -->
+                <table class="table table-hover">
                 
-                <tbody>
-                    {% for document in documents %}
-                      <tr>
-                        <td scope="row">{{ document.document_id }}</td>
-                        <td><a href="{{ document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ document.document_name }}</a></td>
-                        <td>{{ document.department }}</td>
-                        <td>{{ document.document_date }}</td>
-                      </tr>
-                    {% endfor %}
-                </tbody>
-                
-              </table>
-              <!-- End Table with hoverable rows -->
-        </div>
+                  <thead>
+                    <tr>
+                      <th scope="col">Sənəd #</th>
+                      <th scope="col">Sənədin Adı</th>
+                      <th scope="col">Struktur bölməsi</th>
+                      <th scope="col">Təsdiq tarixi</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                      {% for document in documents %}
+                        <tr>
+                          <td scope="row">{{ document.document_id }}</td>
+                          <td><a href="{{ document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ document.document_name }}</a></td>
+                          <td>{{ document.department }}</td>
+                          <td>{{ document.document_date }}</td>
+                        </tr>
+                      {% endfor %}
+                  </tbody>
+                  
+                </table>
+                <!-- End Table with hoverable rows -->
+          </div>
         {% endif %}
       </div>
     </section>

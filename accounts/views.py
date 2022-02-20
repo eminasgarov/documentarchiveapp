@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from documents.models import Document
+from contact.models import Email
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -9,6 +11,7 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import  force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -68,7 +71,7 @@ def forgotPassword(request):
 
 def resetpassword_validate(request, uidb64, token):
     try:
-        uid = urlsafe_base64_decode(uidb64).decode()
+        uid  = urlsafe_base64_decode(uidb64).decode()
         user = User._default_manager.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
@@ -100,3 +103,18 @@ def resetPassword(request):
             return redirect('resetPassword')
     else:
         return render(request, 'accounts/resetPassword.html')
+    
+    
+@login_required(login_url = 'login')
+def profile(request):
+    documents   = Document.objects.order_by('-created_date')
+    user        = User.objects.get(id=request.user.id)
+    user_inquiry = Email.objects.order_by('-created_date').filter(user_id=request.user.id)
+    
+    data = {
+        'user':         user,
+        'documents':    documents,
+        'inquiries':    user_inquiry,
+    }
+    
+    return render(request, 'accounts/profile.html', data)

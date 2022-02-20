@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.documents, name='documents'),
-    path('documents/<slug:document_type_slug>/', views.documents, name='documents_by_type'),
+    path('type/<slug:document_type_slug>/', views.documents, name='documents_by_type'),
     path('search/', views.search, name='search')
-
 ]

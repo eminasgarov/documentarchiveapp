@@ -1,11 +1,11 @@
-from .models import Document, Department, DocumentSection
+from .models import DocumentVariation, Department, DocumentSection
 
 def doc_sec_filter_link(request):
     document_sections = DocumentSection.objects.all()
     return dict(document_sections=document_sections)
 
 def doc_filter_link(request):
-    documents = Document.objects.all()
+    documents = DocumentVariation.objects.all()
     return dict(documents=documents)
 
 

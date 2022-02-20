@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Profil məlumatları</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Əsas səhifə</a></li>
+          <li class="breadcrumb-item active">Profil</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              
+              <div class="tab-content pt-2">
+
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                  {% if user.userprofile.profile_photo %}
+                    <img src="{{ user.userprofile.profile_photo.url }}" alt="Profile" class="rounded-circle">
+                  {% else %}
+                    <img src="\media\userprofile\user.png" alt="Profile" class="rounded-circle">
+                  {% endif %}
+                </div>
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 label ">Ad, Soyad</div>
+                    <div class="col-lg-8 col-md-8">{{ user.first_name }} {{ user.last_name }}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 label">Müəssisə</div>
+                    <div class="col-lg-8 col-md-8">{{ user.userprofile.company }}</div>
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 label">Struktur bölmə</div>
+                    <div class="col-lg-8 col-md-8">{{ user.userprofile.department }}</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 label">Vəzifə</div>
+                    <div class="col-lg-8 col-md-8">{{ user.userprofile.position }}</div>
+                  </div>
+                  
+
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 label">Email</div>
+                    <div class="col-lg-8 col-md-8">{{ user.email }}</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-xl-8">
+
+          <div class="card">
+
+            <div class="card-body">
+              <h5 class="card-title">Müraciətlər</h5>
+              <!-- Table with hoverable rows -->
+              {% if inquiries %}
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Müraciət №</th>
+                      <th scope="col">Ad, Soyad</th>
+                      <th scope="col">Mövzu</th>
+                      <th scope="col">Müraciət tarixi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for inquiry in inquiries %}
+                      <tr>
+                        <th scope="row">{{ inquiry.id }}</th>
+                        <td>{{ inquiry.first_name }} {{ inquiry.last_name }}</td>
+                        <td>{{ inquiry.subject }}</td>
+                        <td>{{ inquiry.created_date }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <!-- End Table with hoverable rows -->
+              {% else %}
+                <h5 class="card-title">Sizin müraciətiniz olmamışdır.</h5>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+    </div>    
+    </section>
+
+  </main><!-- End #main -->
+
+{% endblock %}

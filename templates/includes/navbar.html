@@ -32,22 +32,20 @@
       </li><!-- End Dashboard Nav -->
 
 
-      
-      
       {% for document in documents %}
-      <span style="font-weight: 700;">{{document.document_section}}</span>
-        <li class="nav-item">
-          <a
-          {% if request.path == document.get_url %}
-            class="nav-link"
-          {% else %}
-            class="nav-link collapsed"
-          {% endif %}
-          href="{{ document.get_url }}">
-            <i class="bi bi-file-earmark"></i>
-            <span>{{ document.document_type }}</span>
-          </a>
-        </li><!-- End Blank Page Nav -->
+        <span style="font-weight: 700;">{{document.document_section}}</span>
+          <li class="nav-item">
+            <a
+            {% if request.path == document.document_type.get_url %}
+              class="nav-link"
+            {% else %}
+              class="nav-link collapsed"
+            {% endif %}
+            href="{{ document.document_type.get_url }}">
+              <i class="bi bi-file-earmark"></i>
+              <span>{{ document.document_type }}</span>
+            </a>
+          </li><!-- End Blank Page Nav -->
       {% endfor %}
 
 
