@@ -3,6 +3,7 @@
 
 {% block branding %}
 
+
 <h1 id="head">
     <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" class="brand_img" height="30"></a>
 </h1>
@@ -12,5 +13,7 @@
 {% block extrastyle %}
 
 <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<link href="{% static 'img/favicon.png' %}" rel="icon">
+<link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
 {% endblock %}
