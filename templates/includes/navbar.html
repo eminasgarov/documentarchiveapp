@@ -32,21 +32,23 @@
       </li><!-- End Dashboard Nav -->
 
 
-      {% for document in documents %}
-        <span style="font-weight: 700;">{{document.document_section}}</span>
+        <span style="font-weight: 700;">KİS sənədləri</span>
+
           <li class="nav-item">
+            {% for document in docs %}
             <a
-            {% if request.path == document.document_type.get_url %}
+            {% if request.path == document.get_url %}
               class="nav-link"
             {% else %}
               class="nav-link collapsed"
             {% endif %}
-            href="{{ document.document_type.get_url }}">
+            href="{{ document.get_url }}">
               <i class="bi bi-file-earmark"></i>
               <span>{{ document.document_type }}</span>
             </a>
+            {% endfor %}
           </li><!-- End Blank Page Nav -->
-      {% endfor %}
+      
 
 
     </ul>

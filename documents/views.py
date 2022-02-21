@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from category.models import Department, DocumentVariation
+from category.models import Department, DocumentSection, DocumentVariation
 from documents.models import Document
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -14,14 +14,14 @@ def documents(request, document_type_slug=None):
     if document_type_slug != None:
         document_types          = get_object_or_404(DocumentVariation, slug=document_type_slug)
         documents               = Document.objects.filter(document_type=document_types).order_by('-created_date')
-        paginator               = Paginator(documents, 10)
+        paginator               = Paginator(documents, 15)
         page                    = request.GET.get('page')
         paged_documents         = paginator.get_page(page)
         documents_count         = documents.count()
     
     else:
         documents               = Document.objects.all().order_by('-created_date')
-        paginator               = Paginator(documents, 10)
+        paginator               = Paginator(documents, 15)
         page                    = request.GET.get('page')
         paged_documents         = paginator.get_page(page)
         documents_count         = documents.count()
@@ -58,7 +58,7 @@ def search(request):
             documents           = documents.filter(document_type__document_type__iexact=document_type)
             documents_count     = documents.count()
             
-    paginator           = Paginator(documents, 10)
+    paginator           = Paginator(documents, 15)
     page                = request.GET.get('page')
     paged_documents     = paginator.get_page(page)
     documents_count     = documents.count()

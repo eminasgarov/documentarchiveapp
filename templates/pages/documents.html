@@ -9,16 +9,21 @@
 
    
       <div class="pagetitle">
-        <h1>Prosedurlar</h1>
+        {% for document in docs %}
+        {% if request.path == document.get_url %}
+          <h1>{{ document.document_type }}</h1>
+        {% endif %}
+        {% endfor %}
       </div><!-- End Page Title -->
     <div class="row">
       <div class="col-lg-6">
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home' %}">Əsas səhifə</a></li>
-            {% for document in documents %}
-            <li class="breadcrumb-item active">{{ document.document_section }}</li>
+            {% for document in docs %}
+            {% if request.path == document.get_url %}
             <li class="breadcrumb-item active">{{ document.document_type }}</li>
+            {% endif %}
             {% endfor %}
           </ol>
         </nav>

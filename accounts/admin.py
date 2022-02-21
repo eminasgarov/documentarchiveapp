@@ -1,5 +1,5 @@
 from django.contrib import admin
-from accounts.models import UserProfile
+from accounts.models import UserProfile, UserPermission
 from django.utils.html import format_html
 
 
@@ -14,4 +14,9 @@ class UserProfileAdmin(admin.ModelAdmin):
     search_fields       = ('user', 'department', 'position')
     list_filter         = ('department',) 
     
+    
+class UserPermissionAdmin(admin.ModelAdmin):
+    list_display = ('user',)
+
 admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(UserPermission, UserPermissionAdmin)

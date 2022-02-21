@@ -5,8 +5,8 @@ def doc_sec_filter_link(request):
     return dict(document_sections=document_sections)
 
 def doc_filter_link(request):
-    documents = DocumentVariation.objects.all()
-    return dict(documents=documents)
+    docs = DocumentVariation.objects.all()
+    return dict(docs=docs)
 
 
 def dep_filter_link(request):
