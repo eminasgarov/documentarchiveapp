@@ -1,5 +1,5 @@
 from django.contrib import admin
-from accounts.models import UserProfile, UserPermission
+from accounts.models import UserProfile
 from django.utils.html import format_html
 
 
@@ -9,14 +9,11 @@ class UserProfileAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
         return format_html('<img src="{}" width="40" style="border-radius: 20px" />'.format(object.profile_photo.url))
     
-    list_display        = ('user', 'company', 'department', 'position')
+    list_display        = ('user', 'company', 'department', 'position', 'is_management')
     list_display_links  = ('user',)
+    list_editable       = ('is_management',)
     search_fields       = ('user', 'department', 'position')
-    list_filter         = ('department',) 
+    list_filter         = ('department', 'is_management') 
     
     
-class UserPermissionAdmin(admin.ModelAdmin):
-    list_display = ('user',)
-
 admin.site.register(UserProfile, UserProfileAdmin)
-admin.site.register(UserPermission, UserPermissionAdmin)

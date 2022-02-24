@@ -45,11 +45,16 @@
                   </div>
 
 
+                  {% if request.user.userprofile.is_management %}
+                  
+                  {% else %}
                   <div class="row">
                     <div class="col-lg-4 col-md-4 label">Struktur bölmə</div>
                     <div class="col-lg-8 col-md-8">{{ user.userprofile.department }}</div>
                   </div>
+                  {% endif %}
 
+                  
                   <div class="row">
                     <div class="col-lg-4 col-md-4 label">Vəzifə</div>
                     <div class="col-lg-8 col-md-8">{{ user.userprofile.position }}</div>
@@ -91,7 +96,7 @@
                         <th scope="row">{{ inquiry.id }}</th>
                         <td>{{ inquiry.first_name }} {{ inquiry.last_name }}</td>
                         <td>{{ inquiry.subject }}</td>
-                        <td>{{ inquiry.created_date }}</td>
+                        <td>{{ inquiry.created_date | date:"SHORT_DATE_FORMAT" }}</td>
                       </tr>
                     {% endfor %}
                   </tbody>

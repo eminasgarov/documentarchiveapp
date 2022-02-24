@@ -1,41 +1,55 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from category.models import Department, DocumentSection, DocumentVariation
+from category.models import Department, DocumentVariation
 from documents.models import Document
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Q
+from django.core.paginator import Paginator
+
+
 # Create your views here.
 
 @login_required(login_url = 'login')
 def documents(request, document_type_slug=None):
     document_types          = None
     documents               = None
-    
+
     if document_type_slug != None:
-        document_types          = get_object_or_404(DocumentVariation, slug=document_type_slug)
-        documents               = Document.objects.filter(document_type=document_types).order_by('-created_date')
-        paginator               = Paginator(documents, 15)
-        page                    = request.GET.get('page')
-        paged_documents         = paginator.get_page(page)
-        documents_count         = documents.count()
+        if request.user.userprofile.is_management:
+            document_types          = get_object_or_404(DocumentVariation, slug=document_type_slug)
+            documents               = Document.objects.filter(document_type=document_types).order_by('-created_date')
+            documents_count         = documents.count()
+        else:
+            document_types          = get_object_or_404(DocumentVariation, slug=document_type_slug)
+            documents               = Document.objects.filter(document_type=document_types, department=request.user.userprofile.department).order_by('-created_date')
+            documents_count         = documents.count()
     
     else:
-        documents               = Document.objects.all().order_by('-created_date')
-        paginator               = Paginator(documents, 15)
-        page                    = request.GET.get('page')
-        paged_documents         = paginator.get_page(page)
-        documents_count         = documents.count()
+        if request.user.userprofile.is_management:
+            documents               = Document.objects.all().order_by('-created_date')
+            documents_count         = documents.count()
+        else:
+            documents               = Document.objects.filter(department=request.user.userprofile.department).order_by('-created_date')
+            documents_count         = documents.count()
+    
+    paginator               = Paginator(documents, 15)
+    page                    = request.GET.get('page')
+    paged_documents         = paginator.get_page(page)
+    documents_count         = documents.count()
         
     data = {
-        'documents':           paged_documents,
-        'documents_count':     documents_count,
+        'documents':             paged_documents,
+        'documents_count':       documents_count,
     }
     return render(request, 'pages/documents.html', data)
 
 
 @login_required(login_url = 'login')
 def search(request):
-    documents               = Document.objects.order_by('-created_date')
+    
+    if request.user.userprofile.is_management:
+        documents               = Document.objects.all().order_by('-created_date')
+    else:
+        documents               = Document.objects.order_by('-created_date').filter(department=request.user.userprofile.department)
+    
     department_search       = Department.objects.values_list('department', flat=True).distinct()
     document_type_search    = DocumentVariation.objects.values_list('document_type', flat=True).distinct()
     
