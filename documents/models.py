@@ -11,6 +11,7 @@ class Document(models.Model):
     department             = models.ForeignKey(Department, on_delete=models.CASCADE)
     document_file          = models.FileField(upload_to='documents/%Y/%m/%d/')
     document_date          = models.CharField(max_length=20)
+    access_for_all         = models.BooleanField(default=False)
     is_featured            = models.BooleanField(default=False)
     created_date           = models.DateTimeField(auto_now_add=True)
     modified_date          = models.DateTimeField(auto_now=True)
