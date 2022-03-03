@@ -40,7 +40,7 @@
         {% if documents %}
           <div class="card">
           <!-- Table with hoverable rows -->
-                <table class="table table-hover">
+                <table class="table datatable">
                 
                   <thead>
                     <tr>
@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <!-- Pagination with icons -->
+    {% comment %} <!-- Pagination with icons -->
               <nav aria-label="Page navigation example">
                 {% if documents.has_other_pages %}
                   <ul class="pagination justify-content-center">
@@ -110,7 +110,7 @@
                     {% endif %}
                   </ul>
                 {% endif %}
-              </nav><!-- End Pagination with icons -->
+              </nav><!-- End Pagination with icons --> {% endcomment %}
 
   </main><!-- End #main -->
 

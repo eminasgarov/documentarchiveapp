@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'category.context_processors.doc_sec_filter_link',
                 'category.context_processors.doc_filter_link',
                 'category.context_processors.dep_filter_link',
             ],

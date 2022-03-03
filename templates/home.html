@@ -4,6 +4,7 @@
 
 {% block content %}
 
+
 {% load static %}
 
 
@@ -49,7 +50,9 @@
 
           <div class="card">
             <div class="card-body">
+
               <h5 class="card-title">Sənəd üzrə statistika</h5>
+
               <!-- Bar Chart -->
               <div id="barChart"></div>
 
@@ -57,7 +60,8 @@
                 document.addEventListener("DOMContentLoaded", () => {
                   new ApexCharts(document.querySelector("#barChart"), {
                     series: [{
-                      data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+                      name: "Sənəd sayı",
+                      data: {{type_count|safe}},
                     }],
                     chart: {
                       type: 'bar',
@@ -70,11 +74,10 @@
                       }
                     },
                     dataLabels: {
-                      enabled: false
+                      enabled: true
                     },
                     xaxis: {
-                      categories: [
-                      ],
+                      categories: {{document_types|safe}},
                     }
                   }).render();
                 });
@@ -99,7 +102,35 @@
           </div>
       <!-- End Revenue Card -->
 
-          <!-- Recent Activity -->
+
+      <!-- Small tables -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sənədlər üzrə ümumi məlumat</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sənəd tipi</th>
+                <th scope="col">Sənəd sayı</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for stat1, stat2 in stat_objects %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ stat1 }}</td>
+                <td>{{ stat2 }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <!-- End small tables -->
+
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Son əlavə olunan sənədlər <span>| Tarixçə</span></h5>
@@ -113,8 +144,39 @@
                 {% endfor %}
               </div>
             </div>
-          </div><!-- End Recent Activity -->
+          </div>
+      <!-- End Recent Activity -->
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sənəd payı</h5>
+
+      <!-- Pie Chart -->
+              <div id="pieChart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new ApexCharts(document.querySelector("#pieChart"), {
+                    series: {{type_count|safe}},
+                    chart: {
+                      height: 350,
+                      type: 'pie',
+                      toolbar: {
+                        show: true
+                      }
+                    },
+                    labels: {{document_types|safe}}
+                  }).render();
+                });
+              </script>
+      <!-- End Pie Chart -->
+
+            </div>
+          </div>
+          
         </div>
+
+        
 
       </div>
     </section>

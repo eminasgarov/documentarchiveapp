@@ -40,11 +40,8 @@
           <form class="search-form d-flex align-items-center" method="GET" action='{% url 'search' %}'>
             <div class="row gy-2">
 
-              <div class="col-md-6">
-                <input type="text" name="keyword"  class="form-control" placeholder="Açar sözünü daxil edin" title="Açar sözünü daxil edin">
-              </div>
         
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <select class="form-select" name='department'>
                   <option disabled="disabled" selected="selected">Struktur bölməsini seçin</option>
                   {% for department in department_search %}
@@ -53,7 +50,7 @@
                 </select>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <select class="form-select" name='document_type'>
                   <option disabled="disabled" selected="selected">Sənəd tipini seçin</option>
                   {% for document_type in document_type_search %}
@@ -62,7 +59,7 @@
                 </select>
               </div>
           
-              <div class="col-md-6 text-center">
+              <div class="col-md-4 text-center">
                 <button type="submit" class="btn btn-primary form-control">Axtar</button>
               </div>
 
@@ -77,8 +74,8 @@
 
         {% if documents %}
         <div class="card">
-        <!-- Table with hoverable rows -->
-              <table class="table table-hover">
+        <!-- Table with filter rows -->
+              <table class="table datatable">
                
                 <thead>
                   <tr>
@@ -103,7 +100,7 @@
                 </tbody>
                 
               </table>
-              <!-- End Table with hoverable rows -->
+              <!-- End Table with filter rows -->
         </div>
         {% else %}
         <h7 style="text-align: center;">Daxil etdiyiniz göstəricilərə uyğun sənəd tapılmamışdır</h7>
@@ -112,7 +109,7 @@
     </section>
 
     <!-- Pagination with icons -->
-              <nav aria-label="Page navigation example">
+              {% comment %} <nav aria-label="Page navigation example">
                 {% if documents.has_other_pages %}
                   <ul class="pagination justify-content-center">
                     {% if documents.has_previous %}
@@ -152,7 +149,7 @@
                     {% endif %}
                   </ul>
                 {% endif %}
-              </nav><!-- End Pagination with icons -->
+              </nav><!-- End Pagination with icons --> {% endcomment %}
 
   </main><!-- End #main -->
 

@@ -31,7 +31,7 @@ def documents(request, document_type_slug=None):
             documents               = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date')
             documents_count         = documents.count()
     
-    paginator               = Paginator(documents, 15)
+    paginator               = Paginator(documents, 25)
     page                    = request.GET.get('page')
     paged_documents         = paginator.get_page(page)
     documents_count         = documents.count()
@@ -73,7 +73,7 @@ def search(request):
             documents           = documents.filter(document_type__document_type__iexact=document_type)
             documents_count     = documents.count()
             
-    paginator           = Paginator(documents, 15)
+    paginator           = Paginator(documents, 25)
     page                = request.GET.get('page')
     paged_documents     = paginator.get_page(page)
     documents_count     = documents.count()
