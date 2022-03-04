@@ -5,12 +5,13 @@ from category.models import Department, DocumentVariation
 # Create your models here.
 
 class UserProfile(models.Model):
-    user          = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_photo = models.ImageField(upload_to='userprofile', blank=True)
-    company       = models.CharField(max_length=100, blank=True)
-    department    = models.ForeignKey(Department, on_delete=models.CASCADE, blank=True, null=True)
-    position      = models.CharField(max_length=100, blank=True)
-    is_management = models.BooleanField(default=False)
+    user           = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_photo  = models.ImageField(upload_to='userprofile', blank=True)
+    company        = models.CharField(max_length=100, blank=True)
+    department     = models.ForeignKey(Department, on_delete=models.CASCADE, blank=True, null=True)
+    position       = models.CharField(max_length=100, blank=True)
+    is_management  = models.BooleanField(default=False)
+    request_access = models.BooleanField(default=False)
     
     def __str__(self):
         return self.user.username

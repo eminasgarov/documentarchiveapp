@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SupportTeam, Email
+from .models import SupportTeam, Email, AccessRequest
 
 # Register your models here.
 
@@ -14,3 +14,9 @@ class EmailAdmin(admin.ModelAdmin):
     list_display_links  = ('subject',)
     
 admin.site.register(Email, EmailAdmin)
+
+class AccessRequestAdmin(admin.ModelAdmin):
+    list_display        = ('employee_first_name', 'employee_last_name', 'employee_email', 'employee_department', 'employee_position', 'employee_is_management', 'employee_access_to_request', 'employee_is_admin', 'created_date')
+    list_display_links  = ('employee_first_name', 'employee_last_name', 'employee_email')
+    
+admin.site.register(AccessRequest, AccessRequestAdmin)

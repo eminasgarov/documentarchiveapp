@@ -11,47 +11,43 @@ from django.db.models import Count
 
 @login_required(login_url = 'login')
 def home(request):
+    
+    type_id         = []
+    type_count      = []
+    document_types  = []
+    stat_objects    = zip(document_types, type_count)
             
     if request.user.userprofile.is_management:
         documents                  = Document.objects.all().order_by('-created_date')
-        last_documents             = Document.objects.all().order_by('-created_date')[:7]
+        last_documents             = Document.objects.all().order_by('-created_date')[:10]
         featured_documents         = Document.objects.all().order_by('-created_date').filter(is_featured=True)
+        documents_dictionary       = Document.objects.values_list('document_type').annotate(Count('document_type')).order_by()
+        
+        for key, value in documents_dictionary:
+            type_id.append(key)
+            type_count.append(value)
+        
+        document_types_list        = DocumentVariation.objects.values_list('document_type', flat=True).filter(pk__in=type_id)
+        
+        for i in document_types_list:
+            document_types.append(i)
+            
     else:
         documents                  = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date')
-        last_documents             = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date')[:7]
+        last_documents             = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date')[:10]
         featured_documents         = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date').filter(is_featured=True)
-
-    
-
-    #Dashboard Chart
-    type_id = []
-    type_count = []
-    document_types = []
-    stat_objects = zip(document_types, type_count)
-
-    if request.user.userprofile.is_management:
-        documents_dictionary = Document.objects.values_list('document_type').annotate(Count('document_type')).order_by()
+        documents_dictionary       = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).values_list('document_type').annotate(Count('document_type')).order_by()
         
         for key, value in documents_dictionary:
             type_id.append(key)
             type_count.append(value)
         
-        document_types_list = DocumentVariation.objects.values_list('document_type', flat=True).filter(pk__in=type_id)
-        
-        for i in document_types_list:
-            document_types.append(i)
-    else:
-        documents_dictionary = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).values_list('document_type').annotate(Count('document_type')).order_by()
-        
-        for key, value in documents_dictionary:
-            type_id.append(key)
-            type_count.append(value)
-        
-        document_types_list = DocumentVariation.objects.values_list('document_type', flat=True).filter(pk__in=type_id)
+        document_types_list        = DocumentVariation.objects.values_list('document_type', flat=True).filter(pk__in=type_id)
         for i in document_types_list:
             document_types.append(i)
     
-    total_count = range(0, len(document_types))
+    sum_types       = sum(type_count)
+    
 
     data = {
         'documents':                    documents,          
@@ -59,7 +55,7 @@ def home(request):
         'featured_documents':           featured_documents,
         'document_types':               document_types,
         'type_count':                   type_count,
-        'total_count':                  total_count,
+        'sum_types':                    sum_types,
         'stat_objects':                 stat_objects,
     }
     return render(request, 'home.html', data)

@@ -48,15 +48,19 @@
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
               <li>
-                <hr class="dropdown-divider">
-              </li>
-
-              <li>
                 <a class="dropdown-item d-flex align-items-center" href="{% url 'profile' %}">
                   <i class="ri-user-shared-line"></i>
                   <span>Profilim</span>
                 </a>
               </li>
+              {% if user.userprofile.request_access %}
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'access_request' %}">
+                  <i class="ri-user-add-line"></i>
+                  <span>Yeni əməkdaş sorğusu</span>
+                </a>
+              </li>
+              {% endif %}
               <li>
                 <a class="dropdown-item d-flex align-items-center" href="{% url 'contact' %}">
                   <i class="bi bi-question-circle"></i>

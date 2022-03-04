@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %} | Yeni əməkdaş sorğusu {% endblock  %}
+
+{% block content %}
+{% load static %}
+
+<main id="main" class="main">
+    <section class="section">
+        <div class="row">
+
+            <div class="col-lg-8">
+                {% include 'includes/messages.html' %}
+            </div>
+
+            <div class="col-lg-8">
+    
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Yeni əməkdaşın əlavə olunması üçün Sorğu forması</strong></h5>
+                  <br>
+                  <!-- General Form Elements -->
+                  <form action="{% url 'access_request' %}" method="POST" class="php-email-form">
+                    {% csrf_token %}
+
+                    <h6><strong>Kim tərəfindən sorğu:</strong></h6>
+                    <br>
+                    <div class="row mb-3">
+                      <label for="inputText" class="col-sm-2 col-form-label">Ad</label>
+                      <div class="col-sm-10">
+                        <input type="hidden" name="user_id" value="{{user.id}}">
+                        <input type="text" class="form-control" name="first_name" value="{{ user.first_name }}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Soyad</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="last_name" value="{{ user.last_name }}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="inputEmail" class="col-sm-2 col-form-label">Poçt ünvanı</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" value="{{ user.email }}">
+                      </div>
+                    </div>
+
+                    <br>
+                    <h6><strong>Kim üçün sorğu:</strong></h6>
+                    <br>
+
+                    <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Ad</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="employee_first_name" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Soyad</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="employee_last_name" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Poçt ünvanı</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="employee_email" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Struktur bölmə</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" name="employee_department" style="padding: 10px 15px; font-size: 14px; border-radius: 0px" required>
+                                <option>Struktur bölməni seçin</option>
+                                {% for i in subdep %}
+                                <option>{{i.department}}</option>
+                                {% endfor %}
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Vəzifə</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="employee_position" required>
+                        </div>
+                    </div>
+
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Rəhbər</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_is_management" id="gridRadios1" value="Bəli">
+                            <label class="form-check-label" for="gridRadios1">
+                              Bəli
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_is_management" id="gridRadios2" value="Xeyr" checked>
+                            <label class="form-check-label" for="gridRadios2">
+                              Xeyr
+                            </label>
+                          </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Sorğu icazəsi</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_access_to_request" id="gridRadios1" value="Bəli">
+                            <label class="form-check-label" for="gridRadios1">
+                              Bəli
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_access_to_request" id="gridRadios2" value="Xeyr" checked>
+                            <label class="form-check-label" for="gridRadios2">
+                              Xeyr
+                            </label>
+                          </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Portal Administratoru</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_is_admin" id="gridRadios1" value="Bəli">
+                            <label class="form-check-label" for="gridRadios1">
+                              Bəli
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="employee_is_admin" id="gridRadios2" value="Xeyr" checked>
+                            <label class="form-check-label" for="gridRadios2">
+                              Xeyr
+                            </label>
+                          </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="row mb-3">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">Görəcək işlərin qısa təsviri (admin)</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" style="height: 100px" name="employee_admin_descr" placeholder="1. ..."></textarea>
+                      </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label"></label>
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Təsdiq edirəm</button>
+                      </div>
+                    </div>
+    
+                  </form><!-- End General Form Elements -->
+    
+                </div>
+              </div>
+    
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+{% endblock %}

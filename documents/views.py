@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from category.models import Department, DocumentVariation
 from documents.models import Document
-from django.core.paginator import Paginator
+# from django.core.paginator import Paginator
 from django.db.models import Q
 
 
@@ -31,13 +31,13 @@ def documents(request, document_type_slug=None):
             documents               = Document.objects.filter(Q(department=request.user.userprofile.department) | Q(access_for_all=True)).order_by('-created_date')
             documents_count         = documents.count()
     
-    paginator               = Paginator(documents, 25)
-    page                    = request.GET.get('page')
-    paged_documents         = paginator.get_page(page)
+    # paginator               = Paginator(documents, 30)
+    # page                    = request.GET.get('page')
+    # paged_documents         = paginator.get_page(page)
     documents_count         = documents.count()
         
     data = {
-        'documents':             paged_documents,
+        'documents':             documents,
         'documents_count':       documents_count,
     }
     return render(request, 'pages/documents.html', data)
@@ -73,15 +73,15 @@ def search(request):
             documents           = documents.filter(document_type__document_type__iexact=document_type)
             documents_count     = documents.count()
             
-    paginator           = Paginator(documents, 25)
-    page                = request.GET.get('page')
-    paged_documents     = paginator.get_page(page)
+    # paginator           = Paginator(documents, 25)
+    # page                = request.GET.get('page')
+    # paged_documents     = paginator.get_page(page)
     documents_count     = documents.count()
             
     data = {
         'document_type_search':    document_type_search,
         'department_search':       department_search,
-        'documents':               paged_documents,
+        'documents':               documents,
         'documents_count':         documents_count,
 
     }
