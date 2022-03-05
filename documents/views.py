@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from category.models import Department, DocumentVariation
 from documents.models import Document
-# from django.core.paginator import Paginator
+from django.core.paginator import Paginator
 from django.db.models import Q
 
 

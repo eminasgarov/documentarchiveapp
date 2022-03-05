@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from documents.models import Document
-from contact.models import Email
+from contact.models import Email, AccessRequest
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -110,11 +110,13 @@ def profile(request):
     documents   = Document.objects.order_by('-created_date')
     user        = User.objects.get(id=request.user.id)
     user_inquiry = Email.objects.order_by('-created_date').filter(user_id=request.user.id)
+    user_request = AccessRequest.objects.order_by('-created_date').filter(user_id=request.user.id)
     
     data = {
         'user':         user,
         'documents':    documents,
         'inquiries':    user_inquiry,
+        'requests':     user_request,
     }
     
     return render(request, 'accounts/profile.html', data)
