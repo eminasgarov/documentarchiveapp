@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from category.models import Department, DocumentVariation
+from category.models import Department
 
 # Create your models here.
 
@@ -12,6 +12,8 @@ class UserProfile(models.Model):
     position       = models.CharField(max_length=100, blank=True)
     is_management  = models.BooleanField(default=False)
     request_access = models.BooleanField(default=False)
+    is_online      = models.BooleanField(default=False)
+    last_logout    = models.DateTimeField(blank=True, null=True)
     
     def __str__(self):
         return self.user.username
