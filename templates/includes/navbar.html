@@ -27,30 +27,49 @@
         {% endif %}
         href="{% url 'search' %}">
           <i class="bi bi-search"></i>
-          <span>Ətraflı axtarış</span>
+          <span>Ətraflı axtarış / Bütün sənədlər</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-
-        <span class="card-title">KİS sənədlər</span>
-
-          <li class="nav-item">
-            {% for document in docs %}
-            <a
-            {% if request.path == document.get_url %}
-              class="nav-link"
-            {% else %}
-              class="nav-link collapsed"
-            {% endif %}
-            href="{{ document.get_url }}">
-              <i class="bi bi-file-earmark"></i>
-              <span>{{ document.document_type }}</span>
-            </a>
-            {% endfor %}
-          </li><!-- End Blank Page Nav -->
+      {% for section in document_sections %}
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="{{section.slug}}i">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{section.slug}}" aria-expanded="false" aria-controls="{{section.slug}}">
+              {{section}}
+            </button>
+          </h2>
+          <div id="{{section.slug}}" 
+          {% if 'type' in request.path %}
+          class="accordion-collapse collapse show"
+          {% else %}
+          class="accordion-collapse collapse
+          {% endif %}
+          aria-labelledby="{{section.slug}}i" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <li class="nav-item">
+                {% for document in docs %}
+                  {% if document.document_section == section %}
+                    <a
+                      {% if request.path == document.get_url %}
+                        class="nav-link"
+                      {% else %}
+                        class="nav-link collapsed"
+                      {% endif %}
+                      href="{{ document.get_url }}">
+                        <i class="bi bi-file-earmark"></i>
+                        <span>{{ document.document_type }}</span>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+              </li><!-- End Blank Page Nav -->
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
           
-
-
     </ul>
 
   </aside><!-- End Sidebar-->

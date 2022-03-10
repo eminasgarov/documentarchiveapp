@@ -9,7 +9,7 @@ class DocumentSectionAdmin(admin.ModelAdmin):
 
 class DocumentVariationAdmin(admin.ModelAdmin):
     prepopulated_fields     = {'slug': ('document_type',)}
-    list_display            = ('document_type', 'slug')
+    list_display            = ('document_type', 'slug', 'document_section')
     
 class DepartmentAdmin(admin.ModelAdmin):
     prepopulated_fields     = {'slug': ('department',)}

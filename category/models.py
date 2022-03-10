@@ -1,4 +1,3 @@
-from pyexpat import model
 from django.db import models
 from django.urls import reverse
 # Create your models here.
@@ -15,6 +14,7 @@ class DocumentSection(models.Model):
     
 
 class DocumentVariation(models.Model):
+    document_section = models.ForeignKey(DocumentSection, on_delete=models.CASCADE, null=True)
     document_type = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     

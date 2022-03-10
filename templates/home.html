@@ -47,6 +47,23 @@
               </div>
             </div>
           </div><!-- End Recent Activity -->
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Son əlavə olunan sənədlər <span>| Tarixçə</span></h5>
+              <div class="activity">
+                {% for last_document in last_documents %}
+                  <div class="activity-item d-flex">
+                    <div class="activity-content" style="padding-left: 10px">
+                      <h5 style="font-size: 15px;"><span>{{ last_document.created_date | date:"SHORT_DATE_FORMAT" }} | {{ last_document.document_type}} | </span><a href="{{ last_document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ last_document.document_name }}</a></h5>
+                    </div>
+                  </div><!-- End activity item-->
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+      <!-- End Recent Activity -->
           
 
           <div class="card">
@@ -90,7 +107,7 @@
         
         </div>
 
-        <div class="col-lg-6">
+    <div class="col-lg-6">
       <!-- Revenue Card -->
           <div class="card info-card revenue-card">
 
@@ -106,30 +123,6 @@
             </div>
           </div>
       <!-- End Revenue Card -->
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">İstifadəçilər haqqında ümumi məlumat</h5>
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Sistemdə olanlar</th>
-                <th scope="col">Sistemdə olmayanlar</th>
-                <th scope="col">Cəmi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{ users_online }}</td>
-                <td>{{ users_offline }}</td>
-                <td>{{ users }}</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- End small tables -->
-
-        </div>
-      </div>
 
 
       <!-- Small tables -->
@@ -191,29 +184,37 @@
         </div>
       </div>
 
-      <!-- Recent Activity -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Son əlavə olunan sənədlər <span>| Tarixçə</span></h5>
-              <div class="activity">
-                {% for last_document in last_documents %}
-                  <div class="activity-item d-flex">
-                    <div class="activity-content" style="padding-left: 10px">
-                      <h5 style="font-size: 15px;"><span>{{ last_document.created_date | date:"SHORT_DATE_FORMAT" }} | {{ last_document.document_type}} | </span><a href="{{ last_document.document_file.url }}#toolbar=0&navpanes=0&scrollbar=0">{{ last_document.document_name }}</a></h5>
-                    </div>
-                  </div><!-- End activity item-->
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-      <!-- End Recent Activity -->
-          
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">İstifadəçilər haqqında ümumi məlumat</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Sistemdə olanlar</th>
+                <th scope="col">Sistemdə olmayanlar</th>
+                <th scope="col">Cəmi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ users_online }}</td>
+                <td>{{ users_offline }}</td>
+                <td>{{ users }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End small tables -->
+
         </div>
+      </div>
+
+          
+    </div>
 
         
 
-      </div>
-    </section>
+    </div>
+  </section>
 
   </main><!-- End #main -->
 

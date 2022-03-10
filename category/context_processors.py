@@ -1,4 +1,7 @@
+from django.db.models import Q
+from documents.models import Document
 from .models import DocumentVariation, Department, DocumentSection
+
 
 def doc_sec_filter_link(request):
     document_sections = DocumentSection.objects.all()
@@ -12,4 +15,3 @@ def doc_filter_link(request):
 def dep_filter_link(request):
     departments = Department.objects.all()
     return dict(departments=departments) 
-   
