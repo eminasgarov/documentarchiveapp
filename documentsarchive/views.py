@@ -16,8 +16,9 @@ from accounts.models import UserProfile
 
 @receiver(user_logged_in)
 def got_online(sender, user, request, **kwargs):    
-    user.userprofile.is_online = True
-    user.userprofile.save()
+    if user.is_staff != True:
+        user.userprofile.is_online = True
+        user.userprofile.save()
     
     
 @receiver(user_logged_out)
@@ -30,9 +31,11 @@ def user_logged_out(sender, user, request, **kwargs):
 @login_required(login_url = 'login')
 def home(request):
     
-    users         = User.objects.all().count()
-    users_online  = UserProfile.objects.filter(is_online=True).count()
-    users_offline = UserProfile.objects.filter(is_online=False).count()
+    users          = User.objects.all().count()
+    users_is_staff = User.objects.filter(is_staff=True).count()
+    users_online   = UserProfile.objects.filter(is_online=True).count()
+    users_offline  = UserProfile.objects.filter(is_online=False).count() - users_is_staff
+    
     
     type_id         = []
     type_count      = []
@@ -82,6 +85,7 @@ def home(request):
         'users':                        users,
         'users_online':                 users_online,
         'users_offline':                users_offline,
+        'users_is_staff':               users_is_staff,
     }
     return render(request, 'home.html', data)
 

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} | Əlaqə {% endblock  %}
+{% block title %} | Profil {% endblock  %}
 
 {% block content %}
 {% load static %}
@@ -103,7 +103,7 @@
                 </table>
                 <!-- End Table with hoverable rows -->
               {% else %}
-                <h5 class="card-title">Sizin müraciətiniz olmamışdır.</h5>
+                <span>Sizin müraciətiniz olmamışdır.</span>
               {% endif %}
             </div>
           </div>
@@ -139,7 +139,7 @@
                 </table>
                 <!-- End Table with hoverable rows -->
               {% else %}
-                <h5 class="card-title">Sizin sorğunuz olmamışdır.</h5>
+                <span>Sizin sorğunuz olmamışdır.</span>
               {% endif %}
             </div>
           </div>

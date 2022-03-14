@@ -190,8 +190,9 @@
           <table class="table table-sm">
             <thead>
               <tr>
-                <th scope="col">Sistemdə olanlar</th>
-                <th scope="col">Sistemdə olmayanlar</th>
+                <th scope="col">İstifadəçi (online)</th>
+                <th scope="col">İstifadəçi (offline)</th>
+                <th scope="col">Administrator</th>
                 <th scope="col">Cəmi</th>
               </tr>
             </thead>
@@ -199,6 +200,7 @@
               <tr>
                 <td>{{ users_online }}</td>
                 <td>{{ users_offline }}</td>
+                <td>{{ users_is_staff }}</td>
                 <td>{{ users }}</td>
               </tr>
             </tbody>

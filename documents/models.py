@@ -3,12 +3,12 @@ from category.models import DocumentVariation, Department, DocumentSection
 
 # Create your models here.
 
-class Document(models.Model):
+class Document(models.Model):    
     document_section        = models.ForeignKey(DocumentSection, on_delete=models.CASCADE)
     document_id             = models.CharField(max_length=100, unique=True)
     document_name           = models.CharField(max_length=200)
     document_type           = models.ForeignKey(DocumentVariation, on_delete=models.CASCADE)
-    department              = models.ForeignKey(Department, on_delete=models.CASCADE)
+    department              = models.ForeignKey(Department, on_delete=models.CASCADE, null=True)
     document_file           = models.FileField(upload_to='documents/%Y/%m/%d/')
     document_date           = models.CharField(max_length=20)
     access_for_all          = models.BooleanField(default=False)

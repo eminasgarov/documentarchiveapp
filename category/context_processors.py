@@ -1,5 +1,3 @@
-from django.db.models import Q
-from documents.models import Document
 from .models import DocumentVariation, Department, DocumentSection
 
 
